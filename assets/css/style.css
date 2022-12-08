@@ -8,6 +8,7 @@
 
 html {
   font-family: Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* 
@@ -23,6 +24,7 @@ html {
 3. Từ tổng quan đến chi tiết
 */
 
+/* Common */
 .clear {
   clear: both;
 }
@@ -31,8 +33,53 @@ html {
   color: #fff !important;
 }
 
-#main {
+.text-center {
+  text-align: center !important;
 }
+
+.row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.row ::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+.col-3 {
+  width: calc(100% / 3);
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-full {
+  width: 100%;
+}
+
+.mt-8 {
+  margin-top: 8px !important;
+}
+
+.mt-16 {
+  margin-top: 16px !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+/* #main {
+} */
 
 /* Header */
 #header {
@@ -137,20 +184,20 @@ html {
   transform: translateX(-50%);
   text-align: center;
 }
-#slider .text-heading {
+/* #slider .text-heading {
 }
 #slider .text-descripton {
-}
+} */
 
 /* Content */
-#content {
-}
+/* #content {
+} */
 
 #content .content-section {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding: 64px 0;
+  padding: 64px 0 112px;
 }
 
 #content .section-heading {
@@ -181,8 +228,6 @@ html {
 }
 
 #content .member-item {
-  float: left;
-  width: calc(100% / 3);
   text-align: center;
 }
 
@@ -235,14 +280,7 @@ html {
 
 /* Places */
 .places-list {
-  margin: 32px -8px 0;
-  padding-bottom: 48px;
-}
-
-.place-item {
-  float: left;
-  width: calc(100% / 3);
-  padding: 0 8px;
+  margin-top: 32px;
 }
 
 .place-img {
@@ -274,13 +312,15 @@ html {
   line-height: 1.4;
 }
 
-.place-buy-btn {
+.btn {
   color: #fff;
   background-color: #000;
   text-decoration: none;
   padding: 11px 12px;
   display: inline-block;
   margin-top: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 .place-buy-btn:hover {
@@ -296,9 +336,13 @@ html {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
+}
+
+.modal.open {
+  display: flex;
 }
 
 .modal-container {
@@ -306,6 +350,8 @@ html {
   width: 900px;
   min-height: 200px;
   position: relative;
+  max-width: calc(100% - 32px);
+  animation: modalFadeUp ease 0.5s;
 }
 
 .modal-close {
@@ -343,6 +389,7 @@ html {
 .modal-label {
   display: block;
   font-size: 15px;
+  margin-bottom: 12px;
 }
 
 .modal-input {
@@ -350,7 +397,98 @@ html {
   width: 100%;
   padding: 10px;
   font-size: 15px;
+  margin-bottom: 24px;
+}
+
+#buy-tickets {
+  background: #009688;
+  border: none;
+  color: #fff;
+  width: 100%;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 18px;
+}
+
+#buy-tickets:hover {
+  opacity: 0.8;
+}
+
+.modal-footer {
+  padding: 16px;
+  text-align: right;
+}
+
+.modal-footer a {
+  color: #2196f3;
+}
+
+/* Contact Form */
+
+.contact-content {
+  margin-top: 48px;
+}
+
+.contact-info {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+  width: 30px;
+  display: inline-block;
+}
+
+.contact-form {
+  font-size: 15px;
+}
+
+.contact-form .form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.map-section img {
+  width: 100%;
+}
+
+@keyframes modalFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(-140px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #footer {
+  padding: 64px 16px;
+  text-align: center;
+}
+
+#footer .social-list {
+  font-size: 24px;
+}
+
+#footer .social-list a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+}
+
+#footer .social-list a,
+#footer .copy-right :hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+#footer .copy-right {
+  margin-top: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#footer .copy-right a {
+  color: rgba(0, 0, 0, 0.6);
 }

@@ -153,9 +153,16 @@ html {
 }
 
 /* Search Button */
-#header .search-btn {
+#header .search-btn,
+.mobile-menu-btn {
   float: right;
   padding: 0 21px;
+}
+
+#header .mobile-menu-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 #header .search-btn:hover {
@@ -163,7 +170,16 @@ html {
   cursor: pointer;
 }
 
-#header .search-icon {
+#header .mobile-menu-btn:hover {
+  background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon {
+  background-color: #000;
+}
+
+#header .search-icon,
+#header .menu-icon {
   color: #fff;
   font-size: 20px;
   line-height: 46px;
@@ -195,6 +211,7 @@ html {
 
 #content .content-section {
   width: 800px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: 64px 0 112px;
@@ -280,7 +297,7 @@ html {
 
 /* Places */
 .places-list {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 .place-img {
